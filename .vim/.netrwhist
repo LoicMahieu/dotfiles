@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/private/etc/apache2'
+let g:netrw_dirhist_2='/Users/loicmahieu'
+let g:netrw_dirhist_3='/Volumes/igloodata/WWWRoot/Bioticas/bioticas.com/5'
+let g:netrw_dirhist_4='/Users/loicmahieu/GitHubRepos/datepicker'
