@@ -1,0 +1,2 @@
+DOTFILES_DIRS="$HOME/dotfiles-local $HOME/dotfiles"
+
