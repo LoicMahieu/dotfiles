@@ -2,6 +2,11 @@
 # Load default dotfiles
 source ~/.bash_profile
 
+# Load custom executable functions
+for function in ~/.zsh/functions/*; do
+  source $function
+done
+
 # Load antigen
 source ~/.code/antigen/antigen.zsh
 # install some antigen bundles
