@@ -32,6 +32,9 @@ antigen bundles <<EOBUNDLES
   # Syntax highlighting bundle.
   zsh-users/zsh-syntax-highlighting
 
+  # Z: jump around! jump around!
+  rupa/z z.sh
+
 EOBUNDLES
 # tell Antigen that we're done.
 antigen apply
