@@ -1,3 +1,5 @@
 [user]
 	name = Loïc Mahieu
 	email = mahieuloic@gmail.com
+[push]
+	default = matching
