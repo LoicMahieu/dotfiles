@@ -16,3 +16,9 @@ Install the dotfiles:
 
 - Add new dotfile: `mkrc -d dotfiles ~/.foo`
 
+# Inspirations
+
+Really big thanks! 😍
+
+* https://github.com/sharat87/lawn
+* https://github.com/thoughtbot/dotfiles
