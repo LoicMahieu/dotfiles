@@ -24,6 +24,9 @@ antigen bundles <<EOBUNDLES
   # ZSH port of Fish shell's history search feature.
   zsh-users/zsh-history-substring-search
 
+  # Syntax highlighting bundle.
+  zsh-users/zsh-syntax-highlighting
+
 EOBUNDLES
 # tell Antigen that we're done.
 antigen apply
