@@ -1,8 +1,0 @@
-storage
-compile-cache
-dev
-.npm
-.node-gyp
-blob-store/BLOB
-blob-store/MAP
-

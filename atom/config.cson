@@ -1,5 +1,13 @@
 "*":
   "exception-reporting":
-    userId: "8196b9ba-cd92-73d4-f5a6-11310ca304c5"
+    userId: "be118361-2df8-b4b5-306b-41b1ad60d152"
   welcome:
     showOnStartup: false
+  core: {}
+  editor:
+    invisibles: {}
+  minimap:
+    plugins:
+      "find-and-replace": true
+      "git-diff": true
+      selection: true
