@@ -21,6 +21,9 @@ antigen bundles <<EOBUNDLES
   # Additional completion definitions for Zsh.
   zsh-users/zsh-completions src
 
+  # ZSH port of Fish shell's history search feature.
+  zsh-users/zsh-history-substring-search
+
 EOBUNDLES
 # tell Antigen that we're done.
 antigen apply
