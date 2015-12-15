@@ -18,6 +18,9 @@ antigen bundles <<EOBUNDLES
   # Helper for extracting different types of archives.
   extract
 
+  # Additional completion definitions for Zsh.
+  zsh-users/zsh-completions src
+
 EOBUNDLES
 # tell Antigen that we're done.
 antigen apply
