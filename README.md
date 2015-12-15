@@ -10,6 +10,7 @@ Install [rcm](https://github.com/thoughtbot/rcm):
 
 Install the dotfiles:
 
+    git clone https://github.com/LoicMahieu/dotfiles.git $HOME/dotfiles
     env RCRC=$HOME/dotfiles/rcrc rcup
 
 ## Usage
