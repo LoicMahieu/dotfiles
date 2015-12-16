@@ -64,5 +64,9 @@ alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# Local config
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+# Load the shell dotfiles
+# .exports: env vars
+# .zshrc.local: local config
+for file in ~/.{zshrc.local,exports}; do
+	[[ -r "$file" ]] && [[ -f "$file" ]] && source "$file"
+done
