@@ -19,3 +19,11 @@ export LESS_TERMCAP_md="${yellow}";
 
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X";
+
+# Fix homebrew bin install
+# http://ntk.me/2013/05/04/path-environment-variable/
+# remove /usr/local/bin and /usr/bin
+export PATH=`echo ":$PATH:" | sed -e "s#:/usr/local/bin:#:#g" -e "s/^://" -e "s/:$//"`
+export PATH=`echo ":$PATH:" | sed -e "s#:/usr/bin:#:#g" -e "s/^://" -e "s/:$//"`
+# add /usr/local/bin and /usr/bin in that order
+export PATH="/usr/local/bin:/usr/bin:$PATH"
