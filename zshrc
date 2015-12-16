@@ -32,6 +32,9 @@ antigen bundles <<EOBUNDLES
   # Syntax highlighting bundle.
   zsh-users/zsh-syntax-highlighting
 
+  # zsh completion for docker
+  felixr/docker-zsh-completion
+
   # Z: jump around! jump around!
   rupa/z z.sh
 
