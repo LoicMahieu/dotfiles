@@ -1,9 +1,8 @@
 [user]
 	name = Loïc Mahieu
 	email = mahieuloic@gmail.com
-
-[push]
-	default = matching
+[github]
+	user = loicmahieu
 
 [alias]
 	a = add -v
@@ -123,3 +122,74 @@
 			git commit --amend -m \"$(git log -1 --pretty=%B)\n\nCloses #$1.\"; \
 		fi \
 	}; f"
+
+[core]
+	# Use custom `.gitignore` and `.gitattributes`
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+
+	# Treat spaces before tabs and all kinds of trailing whitespace as an error
+	# [default] trailing-space: looks for spaces at the end of a line
+	# [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+
+	# Make `git rebase` safer on OS X
+	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+	trustctime = false
+	editor = vim
+
+[color]
+	# Use colors in Git commands that are capable of colored output when
+	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+	ui = auto
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold # line info
+	old = red # deletions
+	new = green # additions
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[diff]
+	# Detect copies as well as renames
+	renames = copies
+
+[help]
+	# Automatically correct and execute mistyped commands
+	autocorrect = 1
+
+[merge]
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
+
+[push]
+	# Use the Git 1.x.x default to avoid errors on machines with old Git
+	# installations. To use `simple` instead, add this to your `~/.extra` file:
+	# `git config --global push.default simple`. See http://git.io/mMah-w.
+	default = matching
+
+# URL shorthands
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+	pushInsteadOf = "github:"
+	pushInsteadOf = "git://github.com/"
+
+[url "git://github.com/"]
+	insteadOf = "github:"
+
+[url "git@gist.github.com:"]
+	insteadOf = "gst:"
+	pushInsteadOf = "gist:"
+	pushInsteadOf = "git://gist.github.com/"
+
+[url "git://gist.github.com/"]
+	insteadOf = "gist:"
