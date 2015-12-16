@@ -20,6 +20,9 @@ antigen bundles <<EOBUNDLES
   # Because I have the permission
   sudo
 
+  # Better with colors!
+  colored-man-pages
+
   # Help working with version control systems.
   git
 
