@@ -2,3 +2,10 @@
 
 # Make vim the default editor
 export EDITOR=/usr/bin/vim;
+
+# Larger bash history (allow 32³ entries; default is 500)
+export HISTSIZE=50000000;
+export HISTFILESIZE=$HISTSIZE;
+export HISTCONTROL=ignoredups;
+# Make some commands not show up in history
+export HISTIGNORE=" *:ls:cd:cd -:pwd:exit:date:* --help:* -h";
