@@ -17,6 +17,9 @@ antigen bundles <<EOBUNDLES
   mafredri/zsh-async
   sindresorhus/pure
 
+  # Because I have the permission
+  sudo
+
   # Help working with version control systems.
   git
 
