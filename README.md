@@ -25,3 +25,4 @@ Really big thanks! 😍
 * https://github.com/sharat87/lawn
 * https://github.com/thoughtbot/dotfiles
 * https://github.com/paulirish/dotfiles
+* https://github.com/faceleg/dotfiles
