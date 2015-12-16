@@ -45,6 +45,11 @@ antigen bundles <<EOBUNDLES
   # Z: jump around! jump around!
   rupa/z z.sh
 
+  # Help working with Node.js
+  node
+  npm
+  nvm
+
 EOBUNDLES
 # tell Antigen that we're done.
 antigen apply
