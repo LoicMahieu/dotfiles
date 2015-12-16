@@ -25,6 +25,7 @@ antigen bundles <<EOBUNDLES
 
   # Help working with version control systems.
   git
+  git-extras
 
   # Helper for extracting different types of archives.
   extract
