@@ -6,6 +6,7 @@
   core: {}
   editor:
     invisibles: {}
+    fontSize: 17
   minimap:
     plugins:
       "find-and-replace": true
