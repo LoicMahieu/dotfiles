@@ -55,7 +55,7 @@ EOBUNDLES
 antigen apply
 
 # Alias sourcetree
-alias stree='open -a SourceTree'
+alias stree='/Applications/SourceTree.app/Contents/Resources/stree'
 
 # Alias sublime text
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
