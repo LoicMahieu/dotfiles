@@ -12,3 +12,5 @@
       "find-and-replace": true
       "git-diff": true
       selection: true
+  "linter-jshint":
+    disableWhenNoJshintrcFileInPath: true
