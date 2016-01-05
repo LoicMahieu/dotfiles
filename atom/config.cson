@@ -14,3 +14,5 @@
       selection: true
   "linter-jshint":
     disableWhenNoJshintrcFileInPath: true
+  "fuzzy-finder":
+    preserveLastSearch: true
