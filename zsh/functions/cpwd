@@ -1,0 +1,6 @@
+# Copy `pwd` to clipboard
+# Note: MacOS only due to usage of `pbcopy`
+
+cpwd() {
+	pwd | tr -d '\n' | pbcopy
+}
