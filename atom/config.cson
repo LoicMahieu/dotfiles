@@ -14,6 +14,7 @@
       "find-and-replace": true
       "git-diff": true
       selection: true
+    scrollAnimation: true
   "linter-jshint":
     disableWhenNoJshintrcFileInPath: true
   "fuzzy-finder":
