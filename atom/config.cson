@@ -21,3 +21,5 @@
     preserveLastSearch: true
   "atom-beautify":
     analytics: false
+  "minimap-selection":
+    highlightCursorsLines: true
