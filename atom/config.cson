@@ -18,3 +18,5 @@
     disableWhenNoJshintrcFileInPath: true
   "fuzzy-finder":
     preserveLastSearch: true
+  "atom-beautify":
+    analytics: false
