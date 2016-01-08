@@ -24,6 +24,7 @@ Install the dotfiles:
 I don't know tools that can install brew/apt dependencies when new install of RC.
 At this time, a list is good enough:
 * [`lnav`](http://lnav.org/) : brew install lnav
+* `tree` : brew install tree
 
 
 # Inspirations
