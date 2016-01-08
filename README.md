@@ -21,10 +21,26 @@ Install the dotfiles:
 
 ## External dependencies
 
+#### brew/apt
+
 I don't know tools that can install brew/apt dependencies when new install of RC.
 At this time, a list is good enough:
 * [`lnav`](http://lnav.org/) : brew install lnav
 * `tree` : brew install tree
+
+#### NPM
+
+Same as brew/apt dependencies, here the list of global NPM dependencies:
+* bower
+* npm-check-updates
+* node-inspector
+* npmrc
+* prettyjson
+* gulp
+* grunt
+* cordova
+* airtar
+* airpaste
 
 
 # Inspirations
