@@ -25,6 +25,7 @@ Install the dotfiles:
 
 I don't know tools that can install brew/apt dependencies when new install of RC.
 At this time, a list is good enough:
+* [`git-extras`](https://github.com/tj/git-extras) : brew install git-extras
 * [`lnav`](http://lnav.org/) : brew install lnav
 * `tree` : brew install tree
 * `cdrtools` : brew install cdrtools (mkisofs, ...)
