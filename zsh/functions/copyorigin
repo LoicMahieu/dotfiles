@@ -1,0 +1,7 @@
+# Copy `git remote` URL to clipboard
+# Note: MacOS only due to usage of `pbcopy`
+
+copyorigin() {
+  ref=${1:-"origin"}
+	git config --get remote.$ref.url | tr -d '\n' | pbcopy
+}
