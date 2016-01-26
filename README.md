@@ -28,7 +28,8 @@ At this time, a list is good enough:
 * [`git-extras`](https://github.com/tj/git-extras) : brew install git-extras
 * [`lnav`](http://lnav.org/) : brew install lnav
 * `tree` : brew install tree
-* `cdrtools` : brew install cdrtools (mkisofs, ...)
+* [`xhyve`](https://github.com/mist64/xhyve) : brew install xhyve
+* [`docker-machine-driver-xhyve`](https://github.com/zchee/docker-machine-driver-xhyve): brew install docker-machine-driver-xhyve
 
 #### NPM
 
