@@ -1,0 +1,6 @@
+
+# Shortcuts
+export _VIDEOS=/media/larzdata-extend/Videos
+export _TV_SHOWS=$_VIDEOS/TVShows
+export _MOVIES=$_VIDEOS/Movies
+
