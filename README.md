@@ -21,6 +21,10 @@ Install the dotfiles:
 
 ## External dependencies
 
+#### Manual
+
+* [`gcloud`](https://cloud.google.com/sdk/) : Google Cloud Platform SDK
+
 #### brew/apt
 
 I don't know tools that can install brew/apt dependencies when new install of RC.

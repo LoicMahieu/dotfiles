@@ -70,3 +70,8 @@ export NVM_DIR="$HOME/.nvm"
 for file in ~/.{zshrc.local,exports}; do
 	[[ -r "$file" ]] && [[ -f "$file" ]] && source "$file"
 done
+
+# The next line updates PATH for the Google Cloud SDK.
+GCLOUD_SDK_PATH="$HOME/google-cloud-sdk"
+[ -s "$GCLOUD_SDK_PATH/path.zsh.inc" ] && source "$GCLOUD_SDK_PATH/path.zsh.inc"
+[ -s "$GCLOUD_SDK_PATH/completion.zsh.inc" ] && source "$GCLOUD_SDK_PATH/completion.zsh.inc"
