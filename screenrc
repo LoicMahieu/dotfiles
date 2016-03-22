@@ -1,0 +1,3 @@
+setenv IGNOREEOF 10
+hardstatus alwayslastline " %-w%{=b rY}[%n %t]%{-}%+w"
+startup_message off
