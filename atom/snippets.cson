@@ -19,3 +19,92 @@
 # If you are unfamiliar with CSON, you can read more about it in the
 # Atom Flight Manual:
 # https://atom.io/docs/latest/using-atom-basic-customization#cson
+
+
+'.source.js':
+  'lodash':
+    'prefix': 'lodash'
+    'body': """
+      import $1 from 'lodash/${2:$1}'
+    """
+
+  'console.log':
+    'prefix': 'log'
+    'body': 'console.log(${1:\'crash\'})$2'
+    'description': 'Output data to the console'
+    'rightLabelHTML': '<span style="color:#ff0">JS</span>'
+
+  'console.error':
+    'prefix': 'error'
+    'body': 'console.error(${1:\'crash\'})$2'
+    'description': 'Output error to the console'
+    'rightLabelHTML': '<span style="color:rgb(236, 41, 35)">JS</span>'
+
+  'import':
+    prefix: 'import'
+    body: """
+      import $1 from '${2:$1}'
+    """
+
+  'Named import':
+    prefix: 'imp'
+    body: """
+      import { $1 } from '$1'
+    """
+
+  'React import':
+    prefix: 'import react'
+    body: """
+      import React from 'react'
+    """
+
+  'Connect import':
+    prefix: 'import connect'
+    body: """
+      import { connect } from 'react-redux'
+    """
+
+  'compose import':
+    prefix: 'import compose'
+    body: """
+      import compose from 'recompose/compose'
+    """
+
+  'React Function':
+    'prefix': 'reactfunction'
+    'body': """
+      const ${1:MyComponent} = props => (
+        ${2:<div />}
+      )
+
+    """
+
+  'React Class':
+    'prefix': 'reactc'
+    'body': """
+      class ${1:MyComponent} extends React.Component {
+        constructor () {
+          super()
+          this.state = {}
+        }
+
+        render () {
+          const {props, state} = this
+
+          return (
+            ${2:<div />}
+          )
+        }
+      }
+
+    """
+
+  'React PropTypes':
+    'prefix': 'PropTypes'
+    'body': """
+      import React, { PropTypes } from 'react'
+
+      ${1:MyComponent}.propTypes = {
+        ${2:someProp}: PropTypes.${3:string}
+      }
+    """
