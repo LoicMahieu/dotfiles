@@ -93,3 +93,5 @@ source <(kubectl completion zsh)
 [[ -f /Users/loicmahieu/Projects/iGLOO/boehringer-customer-platform/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/loicmahieu/Projects/iGLOO/boehringer-customer-platform/node_modules/tabtab/.completions/sls.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[ -f ~/.code/fubectl/fubectl.source ] && source ~/.code/fubectl/fubectl.source
