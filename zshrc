@@ -91,3 +91,5 @@ source <(kubectl completion zsh)
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/loicmahieu/Projects/iGLOO/boehringer-customer-platform/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/loicmahieu/Projects/iGLOO/boehringer-customer-platform/node_modules/tabtab/.completions/sls.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

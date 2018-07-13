@@ -44,6 +44,8 @@ At this time, a list is good enough:
 * `tree` : brew install tree
 * [`xhyve`](https://github.com/mist64/xhyve) : brew install xhyve
 * [`docker-machine-driver-xhyve`](https://github.com/zchee/docker-machine-driver-xhyve): brew install docker-machine-driver-xhyve
+* `jq`
+* [`fzf`](https://github.com/junegunn/fzf) : A command-line fuzzy finder
 
 #### NPM
 
@@ -58,7 +60,6 @@ Same as brew/apt dependencies, here the list of global NPM dependencies:
 * cordova
 * airtar
 * airpaste
-* brew install jq
 
 
 # Inspirations
