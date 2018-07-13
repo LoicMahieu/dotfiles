@@ -125,7 +125,7 @@
 
 [core]
 	# Use custom `.gitignore` and `.gitattributes`
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/loicmahieu/.gitignore
 	attributesfile = ~/.gitattributes
 
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error
@@ -137,6 +137,9 @@
 	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
 	trustctime = false
 	editor = vim
+
+	# For MacOS/Windows
+	ignorecase = false
 
 [color]
 	# Use colors in Git commands that are capable of colored output when
@@ -170,9 +173,13 @@
 [merge]
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+	conflictstyle = diff3
 
 [push]
 	default = simple
+
+[commit]
+	#gpgSign = true
 
 # URL shorthands
 [url "git@github.com:"]
@@ -190,3 +197,18 @@
 
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+	process = git-lfs filter-process
+[credential]
+	helper = cache --timeout=3600
+[commit]
+	template = /Users/loicmahieu/.stCommitMsg
