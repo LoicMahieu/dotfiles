@@ -26,4 +26,7 @@ export MANPAGER="less -X";
 export PATH=`echo ":$PATH:" | sed -e "s#:/usr/local/bin:#:#g" -e "s/^://" -e "s/:$//"`
 export PATH=`echo ":$PATH:" | sed -e "s#:/usr/bin:#:#g" -e "s/^://" -e "s/:$//"`
 # add /usr/local/bin and /usr/bin in that order
-export PATH="/usr/local/bin:/usr/bin:$PATH"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:$PATH"
+
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$PATH
