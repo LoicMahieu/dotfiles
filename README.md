@@ -3,10 +3,20 @@
 
 ## Install
 
-Install [rcm](https://github.com/thoughtbot/rcm):
+Install [rcm](https://github.com/thoughtbot/rcm#installation):
 
-    brew tap thoughtbot/formulae
-    brew install rcm
+- MacOS
+```
+brew tap thoughtbot/formulae
+brew install rcm
+```
+
+- Ubuntu
+```
+sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
+sudo apt-get update
+sudo apt-get install rcm
+```
 
 Install the dotfiles:
 
@@ -48,6 +58,7 @@ Same as brew/apt dependencies, here the list of global NPM dependencies:
 * cordova
 * airtar
 * airpaste
+* brew install jq
 
 
 # Inspirations
