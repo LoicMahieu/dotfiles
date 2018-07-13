@@ -49,6 +49,9 @@ antigen bundles <<EOBUNDLES
   node
   npm
   nvm
+  yarn
+
+  kubectl
 
 EOBUNDLES
 # tell Antigen that we're done.
@@ -75,3 +78,16 @@ done
 GCLOUD_SDK_PATH="$HOME/google-cloud-sdk"
 [ -s "$GCLOUD_SDK_PATH/path.zsh.inc" ] && source "$GCLOUD_SDK_PATH/path.zsh.inc"
 [ -s "$GCLOUD_SDK_PATH/completion.zsh.inc" ] && source "$GCLOUD_SDK_PATH/completion.zsh.inc"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+source <(kubectl completion zsh)
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/loicmahieu/Projects/iGLOO/boehringer-customer-platform/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/loicmahieu/Projects/iGLOO/boehringer-customer-platform/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/loicmahieu/Projects/iGLOO/boehringer-customer-platform/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/loicmahieu/Projects/iGLOO/boehringer-customer-platform/node_modules/tabtab/.completions/sls.zsh
