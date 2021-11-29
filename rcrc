@@ -1,1 +1,1 @@
-EXCLUDES="README.md libs/*"
+EXCLUDES="README.md"
