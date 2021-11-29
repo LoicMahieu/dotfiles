@@ -1,5 +1,5 @@
 [user]
-	name = Loïc Mahieu
+	name = Loic Mahieu
 	email = mahieuloic@gmail.com
 [github]
 	user = loicmahieu
@@ -125,7 +125,7 @@
 
 [core]
 	# Use custom `.gitignore` and `.gitattributes`
-	excludesfile = /Users/loicmahieu/.gitignore
+	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
 
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error
@@ -161,54 +161,3 @@
 	added = yellow
 	changed = green
 	untracked = cyan
-
-[diff]
-	# Detect copies as well as renames
-	renames = copies
-
-[help]
-	# Automatically correct and execute mistyped commands
-	autocorrect = 1
-
-[merge]
-	# Include summaries of merged commits in newly created merge commit messages
-	log = true
-	conflictstyle = diff3
-
-[push]
-	default = simple
-
-[commit]
-	#gpgSign = true
-
-# URL shorthands
-[url "git@github.com:"]
-	insteadOf = https://github.com/
-	pushInsteadOf = "github:"
-	pushInsteadOf = "git://github.com/"
-
-[url "git://github.com/"]
-	insteadOf = "github:"
-
-[url "git@gist.github.com:"]
-	insteadOf = "gst:"
-	pushInsteadOf = "gist:"
-	pushInsteadOf = "git://gist.github.com/"
-
-[url "git://gist.github.com/"]
-	insteadOf = "gist:"
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	required = true
-	process = git-lfs filter-process
-[credential]
-	helper = cache --timeout=3600
-[commit]
-	template = /Users/loicmahieu/.stCommitMsg

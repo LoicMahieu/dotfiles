@@ -1,97 +1,136 @@
 
-# Load default dotfiles
-source ~/.bash_profile
+PATH="/opt/homebrew/bin:$PATH"
+
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/loicmahieu/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git jump autojump kubectl docker)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
 done
 
-# Load antigen
-source ~/.code/antigen/antigen.zsh
-# install some antigen bundles
-antigen use oh-my-zsh
-antigen bundles <<EOBUNDLES
+# Homebrew
+export HOMEBREW_PREFIX="/opt/homebrew";
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+export HOMEBREW_REPOSITORY="/opt/homebrew";
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
+export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 
-  # Pure prompt
-  mafredri/zsh-async
-  sindresorhus/pure
+# NVM
+ export NVM_DIR=~/.nvm
+ [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-  # Because I have the permission
-  sudo
-
-  # Better with colors!
-  colored-man-pages
-
-  # Help working with version control systems.
-  git
-  git-extras
-
-  # Helper for extracting different types of archives.
-  extract
-
-  # Additional completion definitions for Zsh.
-  zsh-users/zsh-completions src
-
-  # ZSH port of Fish shell's history search feature.
-  zsh-users/zsh-history-substring-search
-
-  # Syntax highlighting bundle.
-  zsh-users/zsh-syntax-highlighting
-
-  # zsh completion for docker
-  felixr/docker-zsh-completion
-
-  # Z: jump around! jump around!
-  rupa/z z.sh
-
-  # Help working with Node.js
-  node
-  npm
-  nvm
-  yarn
-
-  kubectl
-
-EOBUNDLES
-# tell Antigen that we're done.
-antigen apply
-
-# Alias sourcetree
-alias stree='/Applications/SourceTree.app/Contents/Resources/stree'
-
-# Alias sublime text
-alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-
-# Load nvm: Node Version Manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# Load the shell dotfiles
-# .exports: env vars
-# .zshrc.local: local config
-for file in ~/.{zshrc.local,exports}; do
-	[[ -r "$file" ]] && [[ -f "$file" ]] && source "$file"
-done
-
-# The next line updates PATH for the Google Cloud SDK.
+# GCloud
 GCLOUD_SDK_PATH="$HOME/google-cloud-sdk"
 [ -s "$GCLOUD_SDK_PATH/path.zsh.inc" ] && source "$GCLOUD_SDK_PATH/path.zsh.inc"
 [ -s "$GCLOUD_SDK_PATH/completion.zsh.inc" ] && source "$GCLOUD_SDK_PATH/completion.zsh.inc"
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# Android SDK
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-source <(kubectl completion zsh)
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/loicmahieu/Projects/iGLOO/boehringer-customer-platform/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/loicmahieu/Projects/iGLOO/boehringer-customer-platform/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/loicmahieu/Projects/iGLOO/boehringer-customer-platform/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/loicmahieu/Projects/iGLOO/boehringer-customer-platform/node_modules/tabtab/.completions/sls.zsh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-[ -f ~/.code/fubectl/fubectl.source ] && source ~/.code/fubectl/fubectl.source
+# Go
+export PATH=$PATH:/usr/local/go/bin
