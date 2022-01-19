@@ -142,3 +142,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Go
 export PATH=$PATH:/usr/local/go/bin
+
+export JAVA_HOME='/Applications/Android Studio.app/Contents/jre/Contents/Home'
+
