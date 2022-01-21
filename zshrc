@@ -79,7 +79,6 @@ plugins=(
   autojump
   kubectl
   docker
-  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
