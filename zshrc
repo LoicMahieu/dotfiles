@@ -82,6 +82,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+source <(kubectl completion zsh)
 
 # User configuration
 
@@ -144,3 +145,22 @@ export PATH=$PATH:/usr/local/go/bin
 
 export JAVA_HOME='/Applications/Android Studio.app/Contents/jre/Contents/Home'
 
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+complete -C '/usr/local/bin/aws_completer' aws
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+export PATH="${HOME}/.pyenv/shims:${PATH}"
+export PATH="/usr/local/opt/libpq/bin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# bun completions
+[ -s "/Users/loic/.bun/_bun" ] && source "/Users/loic/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
