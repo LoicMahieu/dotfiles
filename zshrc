@@ -1,4 +1,3 @@
-
 PATH="/opt/homebrew/bin:$PATH"
 
 # If you come from bash you might have to change your $PATH.
@@ -79,6 +78,8 @@ plugins=(
   autojump
   kubectl
   docker
+  zsh-autosuggestions
+  fzf
 )
 
 source $ZSH/oh-my-zsh.sh
