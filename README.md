@@ -46,6 +46,7 @@ At this time, a list is good enough:
 * [`docker-machine-driver-xhyve`](https://github.com/zchee/docker-machine-driver-xhyve): brew install docker-machine-driver-xhyve
 * `jq`
 * [`fzf`](https://github.com/junegunn/fzf) : A command-line fuzzy finder
+- [`delta`](https://github.com/dandavison/delta) : A syntax-highlighting pager for git, diff, grep, and blame output
 
 #### NPM
 
