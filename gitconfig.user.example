@@ -1,0 +1,12 @@
+# Copy relevant lines into ~/.gitconfig — do NOT overwrite your existing file.
+
+[user]
+	name = Loïc Mahieu
+	email = loic@igloo.be
+	signingkey = YOUR_GPG_KEY_ID
+
+[commit]
+	gpgsign = true
+
+[gpg]
+	program = /opt/homebrew/bin/gpg

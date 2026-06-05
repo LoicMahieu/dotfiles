@@ -1,0 +1,7 @@
+# Uncomment optional modules as needed.
+# source "$DOTFILES/zsh/optional/oh-my-zsh.zsh"
+# source "$DOTFILES/zsh/optional/gcloud.zsh"
+# source "$DOTFILES/zsh/optional/android.zsh"
+# source "$DOTFILES/zsh/optional/bun.zsh"
+# source "$DOTFILES/zsh/optional/pyenv.zsh"
+# source "$DOTFILES/zsh/optional/kubectl.zsh"

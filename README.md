@@ -1,75 +1,80 @@
+# My dotfiles (light)
 
-# My dotfiles
+Version allégée pour une install macOS propre. L'ancienne config complète reste dans l'historique git (`git show master:zshrc`, etc.).
 
-## Install
+## Structure
 
-Install [rcm](https://github.com/thoughtbot/rcm#installation):
-
-- MacOS
 ```
-brew tap thoughtbot/formulae
+dotfiles/
+├── zshrc                 # point d'entrée shell (~60 lignes)
+├── zsh/
+│   ├── env.zsh           # Homebrew, NVM, OrbStack, terraform
+│   ├── aliases.zsh       # aliases shell minimaux
+│   ├── optional.rc       # activer des modules optionnels
+│   ├── optional/         # gcloud, android, oh-my-zsh, …
+│   └── functions/        # fonctions zsh (cpwd, …)
+├── gitconfig.shared      # aliases git + delta (sans [user])
+├── gitconfig.user.example
+└── gitignore
+```
+
+## Install rapide (sans rcm)
+
+```bash
+git clone https://github.com/LoicMahieu/dotfiles.git ~/dotfiles
+
+# Shell — remplace ~/.zshrc (sauvegarde d'abord si besoin)
+cp ~/.zshrc ~/.zshrc.backup 2>/dev/null || true
+ln -sf ~/dotfiles/zshrc ~/.zshrc
+
+# Global gitignore — crée/remplace ~/.gitignore seulement
+ln -sf ~/dotfiles/gitignore ~/.gitignore
+
+# Git aliases — n'écrase PAS ~/.gitconfig, ajoute un include
+git config --global include.path ~/dotfiles/gitconfig.shared
+```
+
+Puis ouvre un nouveau terminal. Tu peux vider `~/.zprofile` (NVM/OrbStack sont déjà dans `zsh/env.zsh`).
+
+## Install avec rcm
+
+```bash
 brew install rcm
+git clone https://github.com/LoicMahieu/dotfiles.git ~/dotfiles
+env RCRC=$HOME/dotfiles/rcrc rcup
+git config --global include.path ~/dotfiles/gitconfig.shared
 ```
 
-- Ubuntu
+`rcup` ne lie que `zshrc` et `gitignore`. Le reste est sourcé depuis `~/dotfiles`.
+
+## Modules optionnels
+
+Édite `zsh/optional.rc` et décommente ce dont tu as besoin :
+
+- `oh-my-zsh.zsh` — prompt + plugins (nécessite oh-my-zsh installé)
+- `gcloud.zsh` — Google Cloud SDK
+- `android.zsh` — Android SDK
+- `bun.zsh`, `pyenv.zsh`, `kubectl.zsh`
+
+## Dépendances recommandées
+
+```bash
+brew install fzf git-delta   # fzf + pager git (delta)
 ```
-sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
-sudo apt-get update
-sudo apt-get install rcm
-```
 
-Install the dotfiles:
+Déjà utiles sur ta machine : `gh`, `glab`, `jq`, `ripgrep`, `terraform`.
 
-    git clone https://github.com/LoicMahieu/dotfiles.git $HOME/dotfiles
-    cd $HOME/dotfiles && git submodule update --init --recursive
-    env RCRC=$HOME/dotfiles/rcrc rcup
+## Migration depuis l'ancienne config
 
-## Usage
+| Avant | Maintenant |
+|---|---|
+| oh-my-zsh obligatoire | optionnel via `optional/oh-my-zsh.zsh` |
+| `hyper.js` | supprimé (tu utilises Warp) |
+| `[user]` dans gitconfig | dans `~/.gitconfig` local |
+| chemins `/Users/loic/…` | `$HOME` partout |
+| 160+ lignes zshrc | ~15 lignes + modules |
 
-- Add new dotfile: `mkrc -d dotfiles ~/.foo`
+## Inspirations
 
-
-## External dependencies
-
-#### Manual
-
-* [`gcloud`](https://cloud.google.com/sdk/) : Google Cloud Platform SDK
-
-#### brew/apt
-
-I don't know tools that can install brew/apt dependencies when new install of RC.
-At this time, a list is good enough:
-* [`git-extras`](https://github.com/tj/git-extras) : brew install git-extras
-* [`lnav`](http://lnav.org/) : brew install lnav
-* `tree` : brew install tree
-* [`xhyve`](https://github.com/mist64/xhyve) : brew install xhyve
-* [`docker-machine-driver-xhyve`](https://github.com/zchee/docker-machine-driver-xhyve): brew install docker-machine-driver-xhyve
-* `jq`
-* [`fzf`](https://github.com/junegunn/fzf) : A command-line fuzzy finder
-- [`delta`](https://github.com/dandavison/delta) : A syntax-highlighting pager for git, diff, grep, and blame output
-
-#### NPM
-
-Same as brew/apt dependencies, here the list of global NPM dependencies:
-* bower
-* npm-check-updates
-* node-inspector
-* npmrc
-* prettyjson
-* gulp
-* grunt
-* cordova
-* airtar
-* airpaste
-
-
-# Inspirations
-
-Really big thanks! 😍
-
-* https://github.com/sharat87/lawn
 * https://github.com/thoughtbot/dotfiles
-* https://github.com/paulirish/dotfiles
-* https://github.com/faceleg/dotfiles
-* https://github.com/jfrazelle/dotfiles
 * https://github.com/mathiasbynens/dotfiles
