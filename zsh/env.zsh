@@ -5,6 +5,9 @@ fi
 
 export PATH="$HOME/.local/bin:$PATH"
 
+# autojump (j)
+[[ -f /opt/homebrew/etc/profile.d/autojump.sh ]] && source /opt/homebrew/etc/profile.d/autojump.sh
+
 # OrbStack
 [[ -f "$HOME/.orbstack/shell/init.zsh" ]] && source "$HOME/.orbstack/shell/init.zsh"
 

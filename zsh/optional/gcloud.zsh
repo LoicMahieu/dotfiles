@@ -1,3 +1,7 @@
-GCLOUD_SDK_PATH="$HOME/google-cloud-sdk"
-[[ -s "$GCLOUD_SDK_PATH/path.zsh.inc" ]] && source "$GCLOUD_SDK_PATH/path.zsh.inc"
-[[ -s "$GCLOUD_SDK_PATH/completion.zsh.inc" ]] && source "$GCLOUD_SDK_PATH/completion.zsh.inc"
+if [[ -s /opt/homebrew/share/google-cloud-sdk/path.zsh.inc ]]; then
+  source /opt/homebrew/share/google-cloud-sdk/path.zsh.inc
+  source /opt/homebrew/share/google-cloud-sdk/completion.zsh.inc
+elif [[ -s "$HOME/google-cloud-sdk/path.zsh.inc" ]]; then
+  source "$HOME/google-cloud-sdk/path.zsh.inc"
+  source "$HOME/google-cloud-sdk/completion.zsh.inc"
+fi
